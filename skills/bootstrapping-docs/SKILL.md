@@ -1,7 +1,7 @@
 ---
 name: bootstrapping-docs
 description: |
-  Bootstrap project documentation. Use when the user starts a new project, says "initialize docs", "create project documentation", "set up design docs", "generate project docs", asks what documents a project needs, or mentions they are starting a new project. This skill evaluates the project scope, recommends which documents are needed, then collaboratively writes each one with user input. Output goes to docs/design/. Even if the user just says "I'm starting a new project", ask whether they want to initialize project documentation.
+  Bootstrap project documentation. Use when the user starts a new project, says "initialize docs", "create project documentation", "set up design docs", "generate project docs", asks what documents a project needs, or mentions they are starting a new project. Also triggers on Chinese keywords: 初始化文档, 创建项目文档, 生成设计文档, 新建项目, 新项目, 我要开始一个新项目, 帮我写文档, 项目需要哪些文档. This skill evaluates the project scope, recommends which documents are needed, then collaboratively writes each one with user input. Output goes to docs/design/. Even if the user just says "I'm starting a new project", ask whether they want to initialize project documentation.
 ---
 
 # Bootstrapping Docs
@@ -38,20 +38,20 @@ Based on the user's description, evaluate the project scale and recommend docume
 Recommendation format:
 
 ```
-Based on your description, here's my recommended document set:
+根据您的描述，建议创建以下文档：
 
-✅ Essential
-- PRD (Product Requirements) — clear user-facing feature requirements
-- TDD (Architecture Design) — technology choices and system structure
+✅ 必要
+- PRD（产品需求规格）—— 项目有明确的用户功能需求
+- TDD（架构设计）—— 需要明确技术选型和系统结构
 
-💡 Recommended
-- ERD (Database Design) — you mentioned user data and order data
+💡 建议
+- ERD（数据库设计）—— 您提到有用户数据和订单数据
 
-⏭️ Not needed now
-- SDD (Detailed Design) — project is small enough; TDD covers it
-- Project Plan — solo project, can add later if needed
+⏭️ 暂不需要
+- SDD（详细设计）—— 当前规模较小，TDD 足够
+- 项目计划 —— 单人项目可按需添加
 
-Does this look right? Feel free to add or remove any documents.
+是否按此清单进行？您可以要求添加或移除某些文档。
 ```
 
 **Wait for explicit user confirmation before proceeding to Phase 3.**
@@ -105,9 +105,9 @@ Registry rules:
 **Registry entry format**:
 ```json
 {
-  "path": "docs/design/01_PRD_product_requirements.md",
+  "path": "docs/design/01_PRD_产品需求规格说明书.md",
   "type": "PRD",
-  "description": "Product requirements with user stories and acceptance criteria",
+  "description": "产品需求规格，包含用户故事和验收标准",
   "created_at": "YYYY-MM-DD"
 }
 ```
@@ -122,9 +122,9 @@ Registry rules:
   "documents_updated": [],
   "documents": [
     {
-      "path": "docs/design/01_PRD_product_requirements.md",
+      "path": "docs/design/01_PRD_产品需求规格说明书.md",
       "type": "PRD",
-      "description": "Product requirements with user stories and acceptance criteria",
+      "description": "产品需求规格，包含用户故事和验收标准",
       "created_at": "YYYY-MM-DD"
     }
   ]

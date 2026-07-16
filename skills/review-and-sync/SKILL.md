@@ -1,7 +1,7 @@
 ---
 name: review-and-sync
 description: |
-  Review code changes from git diffs and sync affected project documentation. Use when the user says "review my code", "review recent commits", "check my changes and update docs", "review the PR", "code review", or mentions checking a commit range. This skill reads git diffs, produces a structured review report, analyzes which project documents are affected by the changes, and updates them with user confirmation. Also supports `--fix` mode to read an existing review report and apply fixes item by item.
+  Review code changes from git diffs and sync affected project documentation. Use when the user says "review my code", "review recent commits", "check my changes and update docs", "review the PR", "code review", or mentions checking a commit range. Also triggers on Chinese keywords: 审查代码, 代码审查, review 代码, 检查代码, 同步文档, 检查变更, 看看代码, 看一下最近的提交. This skill reads git diffs, produces a structured review report, analyzes which project documents are affected by the changes, and updates them with user confirmation. Also supports `--fix` mode to read an existing review report and apply fixes item by item.
 ---
 
 # Reviewing Changes
@@ -93,7 +93,7 @@ See `references/review-template.md` for the detailed format. Core structure:
 - Every issue must include **Current Code** and **Fix To** code blocks for direct AI comparison
 - Location must be precise (e.g., `L42` or `L88-95`)
 - If the report file already exists, remove old issues marked `✅` or `⏭️`, keep `⏳` issues, append new issues with sequential numbering
-- After output, ask: "Review report written to docs/code-review.md. Continue with document impact analysis?"
+- After output, ask: "Review 报告已写入 docs/code-review.md，是否继续进行文档影响分析？"
 
 ---
 
@@ -211,7 +211,7 @@ For each document needing updates:
 4. Append a changelog entry at the end of the document:
 
 ```markdown
-| v1.x | YYYY-MM-DD | Updated per commit <hash>: summary of change |
+| v1.x | YYYY-MM-DD | 根据 commit <hash> 更新：xxx |
 ```
 
 ---
@@ -225,13 +225,13 @@ Update `docs/review-state.json` — **preserve the `documents` field intact**, o
   "last_reviewed_commit": "<full commit hash>",
   "last_reviewed_commit_short": "<short hash>",
   "last_review_date": "YYYY-MM-DD",
-  "last_review_summary": "Brief summary of changes reviewed",
-  "documents_updated": ["docs/design/04_API_reference.md"],
+  "last_review_summary": "简要描述本次 review 涉及的主要变更",
+  "documents_updated": ["docs/design/04_API_接口文档.md"],
   "documents": [
     {
-      "path": "docs/design/01_PRD_product_requirements.md",
+      "path": "docs/design/01_PRD_产品需求规格说明书.md",
       "type": "PRD",
-      "description": "Product requirements with user stories and acceptance criteria",
+      "description": "产品需求规格，包含用户故事和验收标准",
       "created_at": "YYYY-MM-DD"
     }
   ]
@@ -261,7 +261,7 @@ cat docs/code-review.md
 
 Use the user-specified path if provided. If the file doesn't exist:
 ```
-No review report found. Run a review first, or specify a report file path.
+未找到 code-review 报告文件。请先执行 review 生成报告，或指定报告文件路径。
 ```
 
 ### fix Step 2: Parse Overview
