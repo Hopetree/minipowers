@@ -52,8 +52,8 @@ cd minipowers
 make install-all
 
 # 或安装指定技能
-make install SKILL=git-conventions
-make install SKILL=review-and-sync
+make install git-conventions
+make install review-and-sync
 
 # 查看可用技能
 make list
