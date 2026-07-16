@@ -3,41 +3,46 @@
 CLAUDE_SKILLS := $(HOME)/.claude/skills
 SOURCE_DIR := skills
 
+# Catch-all for skill name arguments — does nothing on its own
+%:
+	@:
+
 # Default target
 help:
 	@echo "Minipowers — Skills Plugin"
 	@echo ""
 	@echo "Usage:"
-	@echo "  make install SKILL=<name>    Install a specific skill"
+	@echo "  make install <name>          Install a specific skill"
 	@echo "  make install-all             Install all skills"
-	@echo "  make uninstall SKILL=<name>  Remove a specific skill"
+	@echo "  make uninstall <name>        Remove a specific skill"
 	@echo "  make list                    List available skills"
 	@echo ""
 	@echo "Examples:"
-	@echo "  make install SKILL=git-conventions"
-	@echo "  make install SKILL=review-and-sync"
+	@echo "  make install git-conventions"
+	@echo "  make install review-and-sync"
+	@echo "  make uninstall git-conventions"
 	@echo ""
 	@echo "Target directory: $(CLAUDE_SKILLS)"
 
-# Install a single skill
+# Install a specific skill: make install <name>
 install:
-	@if [ -z "$(SKILL)" ]; then \
-		echo "Error: SKILL argument required. Usage: make install SKILL=<name>"; \
-		echo ""; \
-		echo "Available skills:"; \
-		$(MAKE) list; \
-		exit 1; \
-	fi
-	@if [ ! -d "$(SOURCE_DIR)/$(SKILL)" ]; then \
-		echo "Error: skill '$(SKILL)' not found in $(SOURCE_DIR)/"; \
+	@skill="$(filter-out $@,$(MAKECMDGOALS))"; \
+	if [ -z "$$skill" ]; then \
+		echo "Error: skill name required. Usage: make install <name>"; \
 		echo ""; \
 		$(MAKE) list; \
 		exit 1; \
-	fi
-	@echo "Installing $(SKILL)..."
-	@rm -rf "$(CLAUDE_SKILLS)/$(SKILL)"
-	@cp -r "$(SOURCE_DIR)/$(SKILL)" "$(CLAUDE_SKILLS)/$(SKILL)"
-	@echo "✅ $(SKILL) installed to $(CLAUDE_SKILLS)/$(SKILL)"
+	fi; \
+	if [ ! -d "$(SOURCE_DIR)/$$skill" ]; then \
+		echo "Error: skill '$$skill' not found in $(SOURCE_DIR)/"; \
+		echo ""; \
+		$(MAKE) list; \
+		exit 1; \
+	fi; \
+	echo "Installing $$skill..."; \
+	rm -rf "$(CLAUDE_SKILLS)/$$skill"; \
+	cp -r "$(SOURCE_DIR)/$$skill" "$(CLAUDE_SKILLS)/$$skill"; \
+	echo "✅ $$skill installed to $(CLAUDE_SKILLS)/$$skill"
 
 # Install all skills
 install-all:
@@ -50,17 +55,18 @@ install-all:
 	@echo ""
 	@echo "✅ All skills installed to $(CLAUDE_SKILLS)"
 
-# Uninstall a single skill
+# Remove a specific skill: make uninstall <name>
 uninstall:
-	@if [ -z "$(SKILL)" ]; then \
-		echo "Error: SKILL argument required. Usage: make uninstall SKILL=<name>"; \
+	@skill="$(filter-out $@,$(MAKECMDGOALS))"; \
+	if [ -z "$$skill" ]; then \
+		echo "Error: skill name required. Usage: make uninstall <name>"; \
 		exit 1; \
-	fi
-	@if [ -d "$(CLAUDE_SKILLS)/$(SKILL)" ]; then \
-		rm -rf "$(CLAUDE_SKILLS)/$(SKILL)"; \
-		echo "✅ $(SKILL) removed from $(CLAUDE_SKILLS)"; \
+	fi; \
+	if [ -d "$(CLAUDE_SKILLS)/$$skill" ]; then \
+		rm -rf "$(CLAUDE_SKILLS)/$$skill"; \
+		echo "✅ $$skill removed from $(CLAUDE_SKILLS)"; \
 	else \
-		echo "$(SKILL) is not installed."; \
+		echo "$$skill is not installed."; \
 	fi
 
 # List available skills
