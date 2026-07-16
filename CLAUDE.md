@@ -53,6 +53,7 @@ description: |
 - `git-conventions` — Git workflow conventions: commit message format (Angular spec), branch naming, tag management, safety guardrails, and common operations
 - `review-and-sync` — Code review with automated document impact analysis; reviews git diffs, produces AI-oriented review reports, identifies affected project docs, and syncs them. Supports `--fix` mode
 - `bootstrapping-docs` — Bootstrap project documentation; evaluates scope, recommends document set (PRD, TDD, ERD, API, SDD, Project Plan), and collaboratively writes each document with user input
+- `bootstrapping-extension` — Bootstrap a browser extension project with WXT + React + Tailwind CSS; auto-determines complexity level and icon strategy (Emoji vs Lucide), generates complete project with CI/CD, Git Hooks, and icon generation
 
 ### Document Lifecycle
 

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <!-- 背景圆角矩形 — 可替换颜色 -->
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="#6366F1"/>
+  <!-- 拼图块默认形状 — 根据插件功能重新设计 -->
+  <rect x="28" y="34" width="72" height="56" rx="8" fill="white" opacity="0.95"/>
+  <circle cx="64" cy="34" r="10" fill="white"/>
+  <circle cx="64" cy="34" r="10" fill="#6366F1" opacity="0.15"/>
+</svg>
