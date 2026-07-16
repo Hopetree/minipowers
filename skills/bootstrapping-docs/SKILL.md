@@ -171,5 +171,5 @@ If a project overview document is needed, use `00_project_overview.md`.
 - After each document: ask "Continue to the next document?"
 - If the user wants to revise a completed document mid-flow, respond immediately, then resume
 - After all documents are done, output the document index for confirmation
-- README.md is part of the document set — register it in `docs/review-state.json` so the syncing-docs skill tracks it
-- `docs/review-state.json` is shared with the syncing-docs skill — always update it when adding documents
+- README.md is part of the document set — register it in `docs/review-state.json` so the review-and-sync skill tracks it
+- `docs/review-state.json` is shared with the review-and-sync skill — always update it when adding documents

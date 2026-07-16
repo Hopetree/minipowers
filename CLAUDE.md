@@ -18,7 +18,7 @@ This is a skills plugin repository targeting Chinese-speaking developers. Skills
 
 ## Skill Naming Rules
 
-- Use **gerund-based kebab-case** (e.g., `syncing-docs`, `bootstrapping-docs`), consistent with superpowers conventions
+- Use **gerund-based kebab-case** (e.g., `review-and-sync`, `bootstrapping-docs`), consistent with superpowers conventions
 - **Must not conflict** with superpowers skill names: `brainstorming`, `dispatching-parallel-agents`, `executing-plans`, `finishing-a-development-branch`, `receiving-code-review`, `requesting-code-review`, `subagent-driven-development`, `systematic-debugging`, `test-driven-development`, `using-git-worktrees`, `using-superpowers`, `verification-before-completion`, `writing-plans`, `writing-skills`
 - One skill = one task. Don't merge unrelated capabilities into one skill
 
@@ -51,15 +51,15 @@ description: |
 ## Skills in this Plugin
 
 - `git-conventions` — Git workflow conventions: commit message format (Angular spec), branch naming, tag management, safety guardrails, and common operations
-- `syncing-docs` — Code review with automated document impact analysis; reviews git diffs, produces AI-oriented review reports, identifies affected project docs, and syncs them. Supports `--fix` mode
+- `review-and-sync` — Code review with automated document impact analysis; reviews git diffs, produces AI-oriented review reports, identifies affected project docs, and syncs them. Supports `--fix` mode
 - `bootstrapping-docs` — Bootstrap project documentation; evaluates scope, recommends document set (PRD, TDD, ERD, API, SDD, Project Plan), and collaboratively writes each document with user input
 - `bootstrapping-extension` — Bootstrap a browser extension project with WXT + React + Tailwind CSS; auto-determines complexity level and icon strategy (Emoji vs Lucide), generates complete project with CI/CD, Git Hooks, and icon generation
 
 ### Document Lifecycle
 
-`bootstrapping-docs` and `syncing-docs` share `docs/review-state.json`:
+`bootstrapping-docs` and `review-and-sync` share `docs/review-state.json`:
 1. **bootstrapping-docs** — creates the initial document set and registers them
-2. **syncing-docs** — reviews code changes and keeps registered documents in sync
+2. **review-and-sync** — reviews code changes and keeps registered documents in sync
 
 ---
 
