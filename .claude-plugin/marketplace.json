@@ -1,0 +1,18 @@
+{
+  "name": "minipowers",
+  "description": "Mini utility skills for everyday development",
+  "owner": {
+    "name": "Hopetree"
+  },
+  "plugins": [
+    {
+      "name": "minipowers",
+      "description": "A collection of small, practical skills for developers — generate conventional commit messages and build project READMEs",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "Hopetree"
+      }
+    }
+  ]
+}

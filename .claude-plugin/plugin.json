@@ -1,0 +1,18 @@
+{
+  "name": "minipowers",
+  "description": "A collection of small, practical skills for everyday development — conventional commits, README generation, and more",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hopetree"
+  },
+  "homepage": "https://github.com/Hopetree/minipowers",
+  "repository": "https://github.com/Hopetree/minipowers",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "conventional-commits",
+    "readme",
+    "utilities",
+    "developer-tools"
+  ]
+}
