@@ -1,5 +1,5 @@
 ---
-name: review-and-sync
+name: syncing-docs
 description: |
   Review code changes from git diffs and sync affected project documentation. Use when the user says "review my code", "review recent commits", "check my changes and update docs", "review the PR", "code review", or mentions checking a commit range. Also triggers on Chinese keywords: 审查代码, 代码审查, review 代码, 检查代码, 同步文档, 检查变更, 看看代码, 看一下最近的提交. This skill reads git diffs, produces a structured review report, analyzes which project documents are affected by the changes, and updates them with user confirmation. Also supports `--fix` mode to read an existing review report and apply fixes item by item.
 ---
