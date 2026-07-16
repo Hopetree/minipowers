@@ -5,7 +5,7 @@ description: |
 license: MIT
 metadata:
   author: Hopetree
-  version: "2026-07-16"
+  version: "26.07.17"
 ---
 
 # Bootstrapping a Browser Extension
