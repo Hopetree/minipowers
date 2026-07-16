@@ -2,6 +2,10 @@
 name: bootstrapping-docs
 description: |
   Bootstrap project documentation. Use when the user starts a new project, says "initialize docs", "create project documentation", "set up design docs", "generate project docs", asks what documents a project needs, or mentions they are starting a new project. Also triggers on Chinese keywords: 初始化文档, 创建项目文档, 生成设计文档, 新建项目, 新项目, 我要开始一个新项目, 帮我写文档, 项目需要哪些文档. This skill evaluates the project scope, recommends which documents are needed, then collaboratively writes each one with user input. Output goes to docs/design/. Even if the user just says "I'm starting a new project", ask whether they want to initialize project documentation.
+license: MIT
+metadata:
+  author: Hopetree
+  version: "2026-07-16"
 ---
 
 # Bootstrapping Docs

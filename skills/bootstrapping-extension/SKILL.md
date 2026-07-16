@@ -2,6 +2,10 @@
 name: bootstrapping-extension
 description: |
   Bootstrap a browser extension project with WXT + React + Tailwind CSS. Use when the user says "create a browser extension", "build a Chrome extension", "initialize an extension project", "set up a WXT project", or mentions browser extension development. Also triggers on Chinese keywords: 创建浏览器插件, 新建浏览器扩展, 初始化插件项目, 写一个 Chrome 扩展, 浏览器插件开发, WXT 项目初始化, 浏览器插件脚手架.
+license: MIT
+metadata:
+  author: Hopetree
+  version: "2026-07-16"
 ---
 
 # Bootstrapping a Browser Extension

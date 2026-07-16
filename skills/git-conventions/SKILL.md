@@ -2,6 +2,10 @@
 name: git-conventions
 description: |
   Git workflow conventions — commit message format (Angular spec), branch naming, safety guardrails, and common operations. Use when the user mentions any git operation: commit, push, pull, merge, branch, checkout, stash, revert, reset, rebase, tag, pull request, PR, or any version control task. Also triggers on Chinese keywords: 提交代码, 推送, 合并, 分支, 回滚, 暂存, 标签, 创建标签, 推送标签, etc.
+license: MIT
+metadata:
+  author: Hopetree
+  version: "2026-07-16"
 ---
 
 # Git Conventions
