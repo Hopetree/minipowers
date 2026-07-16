@@ -32,14 +32,36 @@ skills/<skill-name>/
 └── references/           # Optional: templates, detailed guides, lookup tables
 ```
 
-**SKILL.md frontmatter**:
+**SKILL.md frontmatter** follows the [agentskills.io specification](https://agentskills.io/specification):
+
+| Field | Required | Constraint | Usage |
+|-------|----------|------------|-------|
+| `name` | ✅ | kebab-case | Unique skill identifier |
+| `description` | ✅ | — | What it does + trigger keywords (English + Chinese) |
+| `license` | Optional | — | License name (this project: `MIT`) |
+| `compatibility` | Optional | ≤ 500 chars | Environment requirements |
+| `metadata` | Optional | key-value map | Arbitrary properties per spec (see below) |
+| `allowed-tools` | Optional | space-separated | Experimental — pre-approved tools |
+
+**Our frontmatter convention**:
 ```yaml
 ---
 name: skill-name
 description: |
-  English description with trigger keywords, plus Chinese keywords (触发词1, 触发词2, ...).
+  English description with trigger keywords. Also triggers on Chinese
+  keywords: 中文触发词1, 中文触发词2, ...
+license: MIT
+metadata:
+  author: Hopetree
+  version: "YY.MM.DD"
 ---
 ```
+
+- `license: MIT` — always included; this project is MIT-licensed
+- `metadata.author` — always `Hopetree`
+- `metadata.version` — calver-style date (`YY.MM.DD`), updated when the skill changes
+- `compatibility` — omit unless the skill has non-obvious system dependencies
+- `allowed-tools` — omit unless the skill genuinely needs pre-authorized tools
 
 **SKILL.md body guidelines**:
 - Keep under 200 lines; move detailed content to `references/`
