@@ -86,13 +86,16 @@ Replace these placeholders in the copied files:
 | `{{EXTENSION_DESCRIPTION}}` | Extension description | "A productivity browser tool" |
 | `{{PACKAGE_NAME}}` | Lowercase hyphenated package name | "my-tool" |
 | `{{EXTENSION_VERSION}}` | Initial version | "0.0.1" |
-| `{{ICON_MODE}}` | `emoji` or `lucide` | "emoji" |
+| `{{ICON_MODE}}` | `emoji` or `lucide` (for conditional logic) | "emoji" |
+| `{{ICON_MODE_CN}}` | Chinese display name for icon strategy | "Emoji" or "Lucide 图标库" |
+
+**Template conditional syntax**: The `App.tsx` file uses `{{#if emoji}}` / `{{else}}` / `{{/if}}` blocks to mark which code to keep per icon strategy. Read the file, identify the block matching `{{ICON_MODE}}`, keep that block and delete the other.
 
 **Files to substitute**:
 - `package.json` — `{{PACKAGE_NAME}}`, `{{EXTENSION_VERSION}}`, `{{EXTENSION_DESCRIPTION}}`
 - `wxt.config.ts` — `{{EXTENSION_NAME}}`, `{{EXTENSION_DESCRIPTION}}`, `{{PACKAGE_NAME}}`
-- `README.md` — `{{EXTENSION_NAME}}`, `{{EXTENSION_DESCRIPTION}}`, `{{PACKAGE_NAME}}`
-- `src/entrypoints/popup/App.tsx` — select emoji or Lucide code block based on `{{ICON_MODE}}`
+- `README.md` — `{{EXTENSION_NAME}}`, `{{EXTENSION_DESCRIPTION}}`, `{{PACKAGE_NAME}}`, `{{ICON_MODE_CN}}`
+- `src/entrypoints/popup/App.tsx` — `{{EXTENSION_NAME}}`, `{{EXTENSION_DESCRIPTION}}`; use `{{ICON_MODE}}` to select the correct conditional block via `{{#if emoji}}`/`{{else}}`/`{{/if}}`
 - `.github/workflows/ci.yml` — no substitution needed
 - `.github/workflows/release.yml` — no substitution needed
 

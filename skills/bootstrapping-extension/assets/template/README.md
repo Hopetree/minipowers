@@ -6,7 +6,7 @@
 
 - **框架**: [WXT](https://wxt.dev) — 下一代浏览器扩展开发框架
 - **前端**: React 18 + TypeScript
-- **样式**: Tailwind CSS 4
+- **样式**: Tailwind CSS 3
 - **图标**: {{ICON_MODE_CN}}
 - **测试**: Vitest
 - **CI/CD**: GitHub Actions
