@@ -84,7 +84,7 @@ Report format is AI-oriented — every issue includes exact file location and fi
 
 See `references/review-template.md` for the detailed format. Core structure:
 
-1. **Issue overview table** — all issues sorted by priority (🔴 Must Fix → 🟡 Should Improve → 🟢 Nice to Have) with number, priority, file, line, summary
+1. **Issue overview table** — all issues sorted by priority (🔴 必须修复 → 🟡 建议改进 → 🟢 可选优化) with number, priority, file, line, summary
 2. **Issue details** — one section per issue: current code, fix code, fix notes
 
 **Output rules**:
@@ -107,10 +107,10 @@ Read the document registry from the state file (already loaded in Step 1; use th
 Use the registered document list directly. Show the user:
 
 ```
-Current project documents (from registry):
-- docs/design/01_PRD_product_requirements.md — Product requirements
-- docs/design/03_ERD_database_design.md — Database design
-- README.md — Project overview
+当前项目文档（来自注册表）：
+- docs/design/01_PRD_产品需求规格说明书.md — 产品需求规格
+- docs/design/03_ERD_数据库设计文档.md — 数据库设计
+- README.md — 项目说明
 ```
 
 Verify each registered file still exists:
@@ -124,13 +124,13 @@ If any are missing, alert the user and offer to remove from registry.
 Ask the user how to proceed:
 
 ```
-No document registry found (or registry has no documents).
+未找到文档注册表（或注册表中没有文档记录）。
 
-Options:
-1. Scan the project for all .md files and build a registry
-2. Manually specify document paths to register
+有两个选项：
+1. 立即扫描项目中所有 .md 文件，建立注册表
+2. 手动指定需要纳入管理的文档路径
 
-Which would you prefer?
+请问您希望如何处理？
 ```
 
 **Option 1 — Full scan and register**:
@@ -174,29 +174,29 @@ Compare changed files against the registry using each document's `type`:
 **Output format**:
 
 ```
-## Document Impact Analysis
+## 文档影响分析
 
-Based on this change set, the following documents need updates:
+根据本次变更，以下文档需要更新：
 
-### Documents Requiring Updates
+### 需要更新的文档
 
-📄 **docs/design/04_API_reference.md**
-- Reason: new /users/profile endpoint added
-- Suggested update: add request/response spec for this endpoint
+📄 **docs/design/04_API_接口文档.md**
+- 原因：新增了 /users/profile 接口
+- 建议更新内容：添加该接口的请求/响应说明
 
-📄 **docs/design/03_ERD_database_design.md**
-- Reason: users table gained an avatar_url column
-- Suggested update: add avatar_url to the users table field spec
+📄 **docs/design/03_ERD_数据库设计文档.md**
+- 原因：users 表新增了 avatar_url 字段
+- 建议更新内容：在 users 表字段说明中添加 avatar_url
 
-### Documents NOT Affected
-- docs/design/01_PRD_product_requirements.md — no feature changes
-- README.md — no relevant changes
+### 无需更新的文档
+- docs/design/01_PRD_产品需求规格说明书.md — 功能需求无变化
+- README.md — 无相关变更
 ```
 
 If a change relates to a document type that doesn't exist, flag it:
 ```
-⚠️ API changes detected but no API document found in the project.
-Consider running the bootstrapping-docs skill to create one.
+⚠️ 发现 API 变更，但项目中没有找到 API 接口文档。
+建议使用 bootstrapping-docs skill 创建 docs/design/04_API_接口文档.md。
 ```
 
 ---
@@ -269,14 +269,14 @@ No review report found. Run a review first, or specify a report file path.
 Parse the **issue overview table**, filter for `⏳ Pending` issues:
 
 ```
-Pending issues from code-review.md:
+从 code-review.md 中读取到以下待处理问题：
 
-| # | Priority | File | Summary |
-|---|----------|------|---------|
-| 1 | 🔴 Must Fix | path/to/file.js | ... |
-| 2 | 🟡 Should Improve | path/to/file.js | ... |
+| # | 优先级 | 文件 | 问题概述 |
+|---|--------|------|----------|
+| 1 | 🔴 必须修复 | path/to/file.js | ... |
+| 2 | 🟡 建议改进 | path/to/file.js | ... |
 
-Fixing in priority order (🔴 → 🟡 → 🟢). Proceed?
+按优先级从高到低逐项修复。是否开始？
 ```
 
 ### fix Step 3: Fix Issues One by One
@@ -299,12 +299,12 @@ Two modes:
 Output after all fixes:
 
 ```
-This session:
-- ✅ Fixed: N items
-- ⏭️ Skipped: N items
-- ⏳ Remaining: N items
+本次处理：
+- ✅ 已修复：N 项
+- ⏭️ 跳过：N 项
+- ⏳ 剩余待处理：N 项
 
-docs/code-review.md updated.
+docs/code-review.md 已更新。
 ```
 
 ---
@@ -315,7 +315,7 @@ docs/code-review.md updated.
 - Document updates are **additive/modifying** — never delete existing content without explicit user request
 - Always read `docs/review-state.json` before writing — merge updates, **never overwrite `documents`**
 - If `docs/` directory doesn't exist, create it first: `mkdir -p docs`
-- Review report defaults to `docs/code-review.md`, formatted for AI consumption
+- Review report defaults to `docs/code-review.md`, formatted for AI consumption (Chinese output)
 - `docs/code-review.md` is itself registered in the document registry with `type: "CODE_REVIEW"`
 - When unsure about doc impact, conservatively list potentially affected docs and let the user decide
 - "Rescan", "update doc list", "add document" jump directly to Step 3 Scenario C

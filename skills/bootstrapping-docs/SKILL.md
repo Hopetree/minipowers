@@ -81,7 +81,7 @@ For each confirmed document, in order:
 4. **Write to file** — once user approves
 5. **Update registry** — immediately append the document to `docs/review-state.json` `documents` list
 
-Output path: `docs/design/<NN>_<TYPE>_<name>.md`
+Output path: `docs/design/<NN>_<TYPE>_<中文名>.md`
 
 ### Phase 5: Generate README.md
 
@@ -157,8 +157,8 @@ Core questions to ask the user before writing each document:
 
 - Sequence number from `01`, zero-padded to two digits
 - Type in uppercase English abbreviation (PRD / TDD / ERD / API / SDD)
-- Descriptive name in English
-- Example: `01_PRD_product_requirements.md`, `04_API_reference.md`
+- Descriptive name in Chinese
+- Example: `01_PRD_产品需求规格说明书.md`, `04_API_接口文档.md`
 
 If a project overview document is needed, use `00_project_overview.md`.
 
@@ -166,7 +166,7 @@ If a project overview document is needed, use `00_project_overview.md`.
 
 ## Notes
 
-- Write documents in the user's preferred language (default to English)
+- Write documents in Chinese — all output documents use Chinese headings, labels, and content
 - Document content comes from user input — do not invent business details
 - After each document: ask "Continue to the next document?"
 - If the user wants to revise a completed document mid-flow, respond immediately, then resume

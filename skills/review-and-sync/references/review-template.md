@@ -1,101 +1,101 @@
-# Code Review Report Template
+# Code Review 报告模板
 
-> Format specification for `docs/code-review.md`. Designed for AI consumption — every issue includes exact location and fix code for direct application.
+> `docs/code-review.md` 的输出格式规范。面向 AI 阅读，每个问题包含精确的修改位置和修改代码，AI 可直接据此执行。
 
 ---
 
-## Template
+## 模板
 
 ```markdown
-# Code Review Report
+# Code Review 报告
 
-**Scope**: <commit_start> → <commit_end>
-**Date**: YYYY-MM-DD
-**Files Changed**: N
-
----
-
-## Issue Overview
-
-| # | Priority | File | Location | Summary | Status |
-|---|----------|------|----------|---------|--------|
-| 1 | 🔴 Must Fix | `path/to/file.js` | L42 | One-line description | ⏳ Pending |
-| 2 | 🔴 Must Fix | `path/to/file.js` | L88 | One-line description | ⏳ Pending |
-| 3 | 🟡 Should Improve | `path/to/file.js` | L120 | One-line description | ⏳ Pending |
-| 4 | 🟢 Nice to Have | `path/to/file.js` | L200 | One-line description | ⏳ Pending |
+**审查范围**：<commit_start> → <commit_end>
+**日期**：YYYY-MM-DD
+**变更文件数**：N 个
 
 ---
 
-## Issue Details
+## 问题总览
 
-### 🔴 Must Fix
+| # | 优先级 | 文件 | 位置 | 问题概述 | 状态 |
+|---|--------|------|------|----------|------|
+| 1 | 🔴 必须修复 | `path/to/file.js` | L42 | 一句话描述 | ⏳ 待处理 |
+| 2 | 🔴 必须修复 | `path/to/file.js` | L88 | 一句话描述 | ⏳ 待处理 |
+| 3 | 🟡 建议改进 | `path/to/file.js` | L120 | 一句话描述 | ⏳ 待处理 |
+| 4 | 🟢 可选优化 | `path/to/file.js` | L200 | 一句话描述 | ⏳ 待处理 |
 
-#### 1. <One-line issue summary>
+---
 
-- **File**: `path/to/file.js`
-- **Location**: Line XX–XX
-- **Problem**: What's wrong with the current code and why it causes errors or risk
-- **Current Code**:
+## 问题详情
+
+### 🔴 必须修复
+
+#### 1. <一句话描述问题>
+
+- **文件**：`path/to/file.js`
+- **位置**：第 XX-XX 行
+- **问题**：具体描述当前代码存在什么问题，为什么会导致错误或风险
+- **当前代码**：
   ```js
-  // The problematic code (keep enough context — 2-3 lines around)
+  // 当前的有问题的代码片段（保留前后各 2-3 行上下文）
   ```
-- **Fix To**:
+- **修改为**：
   ```js
-  // The corrected code
+  // 修正后的代码片段
   ```
-- **Fix Notes**: Why this fix works; things to watch for (other callers affected, tests to update, etc.)
+- **修改说明**：解释为什么这样改，AI 执行修改时需注意的事项（如是否影响其他调用方、是否需要同步修改测试等）
 
-#### 2. <One-line issue summary>
+#### 2. <一句话描述问题>
 
-(Same format)
-
----
-
-### 🟡 Should Improve
-
-#### 3. <One-line suggestion>
-
-(Same format)
+（同上格式）
 
 ---
 
-### 🟢 Nice to Have
+### 🟡 建议改进
 
-#### 4. <One-line optimization>
+#### 3. <一句话描述建议>
 
-(Same format)
+（同上格式）
+
+---
+
+### 🟢 可选优化
+
+#### 4. <一句话描述优化建议>
+
+（同上格式）
 ```
 
 ---
 
-## Writing Rules
+## 写作规则
 
-### Issue Overview Table
+### 问题总览表
 
-- Sort by priority: 🔴 Must Fix → 🟡 Should Improve → 🟢 Nice to Have
-- Within each priority, sort by severity (most severe first)
-- `Location` uses `L<line>` format: `L42` or `L88-95`
-- `Summary` is one line, max 10 words
+- 表格按优先级排列：🔴 必须修复 → 🟡 建议改进 → 🟢 可选优化
+- 同一优先级内按严重程度从高到低排列
+- `位置` 列使用 `L行号` 格式，如 `L42` 或 `L88-95`
+- `问题概述` 一句话概括，不超过 20 字
 
-### Issue Details
+### 问题详情
 
-- Each issue number matches the overview table `#` exactly
-- **Current Code**: keep enough context (2-3 lines around the issue); use `// ...` for omitted sections
-- **Fix To**: provide complete, copy-paste-ready replacement code
-- **Fix Notes**: explain why this change, and whether other files need updating (tests, config, callers)
-- If multiple issues in the same file are related, cross-reference the issue numbers in fix notes
+- 每个问题的编号与总览表中的 `#` 一一对应
+- **当前代码**：保留足够的上下文（前后各 2-3 行），用 `// ...` 标注省略部分
+- **修改为**：给出完整可替换的代码，AI 可直接用于编辑
+- **修改说明**：必须说明改动原因、是否需要同步修改其他文件（测试、配置、调用方等）
+- 如果一个文件的多个问题相互关联，在修改说明中标注关联问题编号
 
-### File Maintenance
+### 文件维护原则
 
-`docs/code-review.md` tracks issue progress via the Status column:
+`docs/code-review.md` 通过状态列追踪问题处理进度：
 
-**On review create/update**:
-- If the file exists, first check existing issue statuses
-- Remove old issues marked `✅ Fixed` or `⏭️ Skipped`
-- Keep old issues marked `⏳ Pending`
-- Append new issues with sequential numbering
+**code-review 创建/更新时**：
+- 如果文件已存在，先检查已有问题状态
+- 删除状态为 `✅ 已修复` 和 `⏭️ 忽略` 的旧问题
+- 保留状态为 `⏳ 待处理` 的旧问题
+- 新发现的问题追加到后面，编号接续
 
-**On --fix apply**:
-- After fixing, update the overview table status from `⏳ Pending` to `✅ Fixed`
-- **Also delete the issue detail section** (details kept only for pending issues)
-- The overview table always stays complete as a processing record
+**--fix 修复问题时**：
+- 修复完成后将总览表中该问题状态从 `⏳ 待处理` 更新为 `✅ 已修复`
+- 同时**删除该问题的问题详情**（问题详情只保留 `⏳ 待处理` 的问题）
+- 问题总览表始终完整保留，作为处理记录

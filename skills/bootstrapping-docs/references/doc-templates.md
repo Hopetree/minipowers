@@ -1,208 +1,210 @@
-# Document Templates Reference
+# 文档模板参考
 
-## 00_project_overview.md
+> 以下模板是 bootstrapping-docs skill 输出文档的格式规范。模板内容为中文，与用户沟通时使用中文。
+
+## 00_项目概览.md
 
 ```markdown
-# Project Name
+# 项目名称
 
-> One-liner: <Name> is a <type> that helps <audience> achieve <goal>.
+> 一句话描述：XXX 是一个帮助 XXX 实现 XXX 的工具/系统/平台。
 
-## Tech Stack
+## 技术栈
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | |
-| Backend | |
-| Database | |
-| Deployment | |
+| 层次 | 技术选型 |
+|------|---------|
+| 前端 | |
+| 后端 | |
+| 数据库 | |
+| 部署 | |
 
-## Document Index
+## 文档索引
 
-| Document | Description |
-|----------|------------|
-| [PRD](01_PRD_product_requirements.md) | Product requirements |
-| [TDD](02_TDD_architecture_design.md) | Architecture design |
+| 文档 | 说明 |
+|------|------|
+| [PRD](01_PRD_产品需求规格说明书.md) | 产品需求规格 |
+| [TDD](02_TDD_架构设计文档.md) | 架构设计 |
 | ... | |
 
-## Quick Start
+## 快速开始
 
-(Environment setup, startup commands, etc.)
+（环境搭建、启动命令等）
 ```
 
 ---
 
-## 01_PRD_product_requirements.md
+## 01_PRD_产品需求规格说明书.md
 
 ```markdown
-# Product Requirements Document (PRD)
+# 产品需求规格说明书（PRD）
 
-**Version**: v1.0
-**Last Updated**: YYYY-MM-DD
-**Status**: Draft / In Review / Approved
+**版本**：v1.0
+**更新日期**：YYYY-MM-DD
+**状态**：草稿 / 评审中 / 已确认
 
 ---
 
-## 1. Background & Goals
+## 1. 背景与目标
 
-### 1.1 Project Background
+### 1.1 项目背景
 
-### 1.2 Target Users
+### 1.2 目标用户
 
-### 1.3 Core Goals
+### 1.3 核心目标
 
-## 2. Functional Requirements
+## 2. 功能需求
 
-### 2.1 Feature List
+### 2.1 功能清单
 
-| Feature | Description | Priority |
-|---------|------------|----------|
+| 功能模块 | 功能描述 | 优先级 |
+|---------|---------|-------|
 | | | P0/P1/P2 |
 
-### 2.2 User Stories
+### 2.2 用户故事
 
-**As** [user role], **I want** [feature], **so that** [value].
+**作为** [用户角色]，**我希望** [功能]，**以便** [价值]。
 
-**Acceptance Criteria**:
-- [ ] Criterion 1
-- [ ] Criterion 2
+**验收标准**：
+- [ ] 条件 1
+- [ ] 条件 2
 
-## 3. Non-Functional Requirements
+## 3. 非功能需求
 
-- Performance:
-- Security:
-- Compatibility:
+- 性能：
+- 安全：
+- 兼容性：
 
-## 4. Out of Scope
+## 4. 不在范围内（Out of Scope）
 
-Explicitly list what will NOT be included to avoid scope creep.
+明确列出本期不做内容，避免范围蔓延。
 
-## 5. Changelog
+## 5. 变更记录
 
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| v1.0 | | Initial version | |
+| 版本 | 日期 | 修改内容 | 修改人 |
+|------|------|---------|-------|
+| v1.0 | | 初始版本 | |
 ```
 
 ---
 
-## 02_TDD_architecture_design.md
+## 02_TDD_架构设计文档.md
 
 ```markdown
-# Architecture Design Document (TDD)
+# 架构设计文档（TDD）
 
-**Version**: v1.0
-**Last Updated**: YYYY-MM-DD
+**版本**：v1.0
+**更新日期**：YYYY-MM-DD
 
 ---
 
-## 1. System Overview
+## 1. 系统概述
 
-## 2. Technology Choices
+## 2. 技术选型
 
-| Category | Choice | Rationale |
-|----------|--------|-----------|
-| Backend Framework | | |
-| Database | | |
-| Cache | | |
-| Message Queue | | |
-| Deployment | | |
+| 类别 | 选型 | 选择理由 |
+|------|------|---------|
+| 后端框架 | | |
+| 数据库 | | |
+| 缓存 | | |
+| 消息队列 | | |
+| 部署方式 | | |
 
-## 3. System Architecture
+## 3. 系统架构
 
-### 3.1 Architecture Diagram
+### 3.1 整体架构图
 
-(Use Mermaid or text description)
+（使用 Mermaid 或文字描述）
 
-### 3.2 Module Breakdown
+### 3.2 模块划分
 
-| Module | Responsibility |
-|--------|---------------|
+| 模块名 | 职责描述 |
+|-------|---------|
 | | |
 
-## 4. Key Flows
+## 4. 核心流程
 
-(Sequence diagrams or flowcharts for critical business flows)
+（关键业务流程的时序图或流程图）
 
-## 5. Deployment Architecture
+## 5. 部署架构
 
-## 6. Technical Risks & Mitigations
+## 6. 技术风险与应对
 
-| Risk | Impact | Mitigation |
-|------|--------|-----------|
+| 风险 | 影响 | 应对方案 |
+|------|------|---------|
 | | | |
 
-## 7. Changelog
+## 7. 变更记录
 
-| Version | Date | Changes |
-|---------|------|---------|
+| 版本 | 日期 | 修改内容 |
+|------|------|---------|
 ```
 
 ---
 
-## 03_ERD_database_design.md
+## 03_ERD_数据库设计文档.md
 
 ```markdown
-# Database Design Document (ERD)
+# 数据库设计文档（ERD）
 
-**Version**: v1.0
-**Last Updated**: YYYY-MM-DD
+**版本**：v1.0
+**更新日期**：YYYY-MM-DD
 
 ---
 
-## 1. Database Overview
+## 1. 数据库概述
 
-- Database type:
-- Database version:
-- Character set:
+- 数据库类型：
+- 数据库版本：
+- 字符集：
 
-## 2. Entity Relationship Diagram
+## 2. 实体关系图
 
 ```mermaid
 erDiagram
-    USER ||--o{ ORDER : "places"
-    ORDER ||--|{ ORDER_ITEM : "contains"
+    USER ||--o{ ORDER : "下单"
+    ORDER ||--|{ ORDER_ITEM : "包含"
 ```
 
-## 3. Table Definitions
+## 3. 数据表设计
 
-### Table: xxx
+### 表名：xxx
 
-**Description**:
+**说明**：
 
-| Column | Type | Required | Default | Description |
-|--------|------|----------|---------|-------------|
-| id | BIGINT | Yes | Auto | Primary key |
-| created_at | DATETIME | Yes | NOW() | Creation time |
+| 字段名 | 类型 | 是否必填 | 默认值 | 说明 |
+|-------|------|---------|-------|------|
+| id | BIGINT | 是 | 自增 | 主键 |
+| created_at | DATETIME | 是 | NOW() | 创建时间 |
 
-**Indexes**:
-- Primary key: `id`
-- Unique index: `xxx`
-- Index: `xxx` (for xxx queries)
+**索引**：
+- 主键：`id`
+- 唯一索引：`xxx`
+- 普通索引：`xxx`（用于 xxx 查询）
 
-## 4. Changelog
+## 4. 变更记录
 
-| Version | Date | Changes |
-|---------|------|---------|
+| 版本 | 日期 | 修改内容 |
+|------|------|---------|
 ```
 
 ---
 
-## 04_API_reference.md
+## 04_API_接口文档.md
 
 ```markdown
-# API Reference
+# 接口文档（API）
 
-**Version**: v1.0
-**Last Updated**: YYYY-MM-DD
-**Base URL**: `https://api.example.com/v1`
+**版本**：v1.0
+**更新日期**：YYYY-MM-DD
+**Base URL**：`https://api.example.com/v1`
 
 ---
 
-## 1. General
+## 1. 通用说明
 
-### 1.1 Authentication
+### 1.1 认证方式
 
-### 1.2 Common Response Format
+### 1.2 通用响应格式
 
 ```json
 {
@@ -212,128 +214,128 @@ erDiagram
 }
 ```
 
-### 1.3 Error Codes
+### 1.3 错误码
 
-| Code | Description |
-|------|------------|
-| 0 | Success |
-| 400 | Bad request |
-| 401 | Unauthorized |
-| 500 | Internal server error |
+| 错误码 | 说明 |
+|-------|------|
+| 0 | 成功 |
+| 400 | 请求参数错误 |
+| 401 | 未授权 |
+| 500 | 服务器内部错误 |
 
-## 2. Endpoints
+## 2. 接口列表
 
-### 2.1 Module Name
+### 2.1 模块名
 
-#### Endpoint Name
+#### 接口名称
 
-- **Method**: POST
-- **Path**: `/resource`
-- **Description**:
+- **Method**：POST
+- **Path**：`/resource`
+- **描述**：
 
-**Request Parameters**:
+**请求参数**：
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
+| 参数名 | 类型 | 必填 | 说明 |
+|-------|------|------|------|
 | | | | |
 
-**Request Example**:
+**请求示例**：
 ```json
 {}
 ```
 
-**Response Example**:
+**响应示例**：
 ```json
 {}
 ```
 
-## 3. Changelog
+## 3. 变更记录
 
-| Version | Date | Changes |
-|---------|------|---------|
+| 版本 | 日期 | 修改内容 |
+|------|------|---------|
 ```
 
 ---
 
-## 05_SDD_detailed_design.md
+## 05_SDD_详细设计文档.md
 
 ```markdown
-# Detailed Design Document (SDD)
+# 详细设计文档（SDD）
 
-**Version**: v1.0
-**Last Updated**: YYYY-MM-DD
+**版本**：v1.0
+**更新日期**：YYYY-MM-DD
 
 ---
 
-## 1. Module Breakdown
+## 1. 模块划分
 
-| Module | Sub-module | Responsibility | Related Files/Dirs |
-|--------|-----------|---------------|-------------------|
+| 模块 | 子模块 | 职责 | 关联文件/目录 |
+|------|-------|------|-------------|
 | | | | |
 
-## 2. Key Flow Detailed Design
+## 2. 核心流程详细设计
 
-### 2.1 Flow Name
+### 2.1 流程名称
 
-**Trigger**:
-**Preconditions**:
-**Postconditions**:
+**触发条件**：
+**前置条件**：
+**后置条件**：
 
-Flow diagram:
+流程图：
 ```mermaid
 flowchart TD
-    A[Start] --> B[Step 1]
+    A[开始] --> B[步骤1]
 ```
 
-**Error Handling**:
+**异常处理**：
 
-## 3. Key Algorithm Notes
+## 3. 关键算法说明
 
-## 4. Inter-Module Interface Definitions
+## 4. 模块间接口定义
 
-## 5. Changelog
+## 5. 变更记录
 
-| Version | Date | Changes |
-|---------|------|---------|
+| 版本 | 日期 | 修改内容 |
+|------|------|---------|
 ```
 
 ---
 
-## 06_project_plan.md
+## 06_项目计划与进度表.md
 
 ```markdown
-# Project Plan & Schedule
+# 项目计划与进度表
 
-**Version**: v1.0
-**Last Updated**: YYYY-MM-DD
-**Project Period**: YYYY-MM-DD ~ YYYY-MM-DD
+**版本**：v1.0
+**更新日期**：YYYY-MM-DD
+**项目周期**：YYYY-MM-DD ~ YYYY-MM-DD
 
 ---
 
-## 1. Milestones
+## 1. 里程碑
 
-| Milestone | Goal | Target Date | Status |
-|-----------|------|------------|--------|
-| M1 | Foundation setup | | ⬜ Not Started |
-| M2 | Core feature development | | ⬜ Not Started |
-| M3 | Testing & launch | | ⬜ Not Started |
+| 里程碑 | 目标 | 计划完成日期 | 状态 |
+|-------|------|------------|------|
+| M1 | 完成基础框架搭建 | | ⬜ 未开始 |
+| M2 | 完成核心功能开发 | | ⬜ 未开始 |
+| M3 | 测试与上线 | | ⬜ 未开始 |
 
-Status: ⬜ Not Started / 🔄 In Progress / ✅ Complete / ❌ Delayed
+状态标记：⬜ 未开始 / 🔄 进行中 / ✅ 已完成 / ❌ 延期
 
-## 2. Task Breakdown
+## 2. 任务分解
 
-| Task | Owner | Est. Hours | Start | End | Status |
-|------|-------|-----------|-------|-----|--------|
+| 任务 | 负责人 | 预计工时 | 开始日期 | 完成日期 | 状态 |
+|------|-------|---------|---------|---------|------|
 | | | | | | |
 
-## 3. Risk Register
+## 3. 风险登记
 
-| Risk | Probability | Impact | Mitigation |
-|------|------------|--------|-----------|
-| | High/Med/Low | High/Med/Low | |
+| 风险描述 | 概率 | 影响 | 应对措施 |
+|---------|------|------|---------|
+| | 高/中/低 | 高/中/低 | |
 
-## 4. Changelog
+## 4. 变更记录
 
-| Version | Date | Changes |
-|---------|------|---------|
+| 版本 | 日期 | 修改内容 |
+|------|------|---------|
 ```
