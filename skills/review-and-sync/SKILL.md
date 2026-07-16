@@ -1,5 +1,5 @@
 ---
-name: reviewing-changes
+name: review-and-sync
 description: |
   Review code changes from git diffs and sync affected project documentation. Use when the user says "review my code", "review recent commits", "check my changes and update docs", "review the PR", "code review", or mentions checking a commit range. This skill reads git diffs, produces a structured review report, analyzes which project documents are affected by the changes, and updates them with user confirmation. Also supports `--fix` mode to read an existing review report and apply fixes item by item.
 ---

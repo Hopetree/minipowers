@@ -10,7 +10,7 @@ Minipowers is a skills plugin that adds handy capabilities to your AI coding age
 
 Git workflow conventions — commit message format (Angular spec), branch naming, tag management, safety guardrails, and common operations. Triggers on any git command (commit, push, branch, merge, tag, etc.) and executes directly without asking for confirmation.
 
-### reviewing-changes
+### review-and-sync
 
 Code review with automated document impact analysis. Reviews git diffs, produces a structured AI-oriented review report, identifies which project documents need updating based on the changed files, and syncs them with user confirmation. Also supports `--fix` mode to apply review findings item by item.
 
@@ -55,16 +55,16 @@ minipowers/
 ├── .kimi-plugin/                # Kimi Code plugin config
 └── skills/
     ├── git-conventions/         # Git workflow conventions
-    ├── reviewing-changes/       # Code review + doc impact sync
+    ├── review-and-sync/       # Code review + doc impact sync
     └── bootstrapping-docs/      # Project documentation bootstrap
 ```
 
 ## Document Lifecycle
 
-`reviewing-changes` and `bootstrapping-docs` work together:
+`review-and-sync` and `bootstrapping-docs` work together:
 
 1. **bootstrapping-docs** — creates the initial document set and registers them in `docs/review-state.json`
-2. **reviewing-changes** — reviews code changes and keeps registered documents in sync as the project evolves
+2. **review-and-sync** — reviews code changes and keeps registered documents in sync as the project evolves
 
 ## Contributing
 
