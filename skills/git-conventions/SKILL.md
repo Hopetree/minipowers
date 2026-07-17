@@ -10,16 +10,23 @@ metadata:
 
 # Git Conventions
 
-## Core Rule
+## Core Rules
 
-When the user explicitly gives a git command (e.g., "commit", "push", "create a branch"), **execute it directly — do not ask for confirmation**.
+### Rule 1: Never commit without explicit instruction
 
-Only confirm with the user when:
+**Do not commit, push, or create a PR unless the user explicitly tells you to.** After making code changes, stop and wait. Do not assume the user wants to commit just because changes exist.
+
+### Rule 2: When instructed, execute directly
+
+When the user gives a clear git command (e.g., "commit", "push", "create a branch"), **execute it immediately — no confirmation, no questions asked**.
+
+Only pause to confirm when:
 - The operation is destructive (`force push`, `reset --hard`, delete branch, etc.)
-- The instruction is ambiguous and you cannot determine the exact operation
+- The instruction is genuinely ambiguous — you cannot determine the specific operation
 - The operation affects shared state (e.g., pushing directly to `main`, modifying CI config)
 
-> Commit when asked. Push when asked. Don't double-check.
+> User says "commit" → commit. User says "push" → push. Don't double-check.
+> User says nothing about committing → don't commit.
 
 ---
 
