@@ -99,7 +99,12 @@ All platforms share the same `skills/` directory. When adding a new platform, cr
 
 ## Git Conventions
 
-This project follows its own `git-conventions` skill:
+This project follows its own `git-conventions` skill.
+
+**🚫 CRITICAL: Never commit, push, or create a PR without an explicit user instruction.**
+After making changes, stop and wait. No automatic git operations. Ever.
+
+When explicitly instructed to commit:
 - Commit messages follow Angular format: `<type>(<scope>): <subject>`
 - Branch naming: `<type>/<description>` (e.g., `feat/new-skill`)
 - No AI attribution in commit messages
